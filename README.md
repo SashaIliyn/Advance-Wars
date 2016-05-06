@@ -33,7 +33,7 @@ N/A
 <b>Contributors:</b><br />
 [Albert Sta Cruz](https://github.com/aStaCruz)<br />
 [Sasha Iliyn](https://github.com/SashaIliyn)<br />
-Saud Mohammed<br />
+[Saud Mohammed](https://github.com/SaudMoh)<br />
 
 <b>Inspiration:</b><br />
 Coming Soon!
