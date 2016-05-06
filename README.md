@@ -11,18 +11,18 @@ This will be my GUI project for which I have yet to decided on a topic.
 Qt, C++, QML
 
 <b>Screenshots/Mockup:</b><br />
-<b>Splash Screen:</b>
+Splash Screen:
 
 ![Alt text](/img/Screenshots/main_splash.PNG)
 
-<b>Settings Page:</b>
+Settings Page:
 
 ![Alt text](/img/Screenshots/settings_page.PNG)
 
 <b>Installation Instructions:</b><br />
-1. Install Qt 5.5+ 
-2. Open project 
-3. Build And Run 
+1. Install Qt 5.5+<br />
+2. Open project<br />
+3. Build And Run<br />
 
 <b>Contribution Guidelines:</b><br />
 Coming Soon!
