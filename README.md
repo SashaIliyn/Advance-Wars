@@ -8,7 +8,7 @@
 This will be my GUI project for which I have yet to decided on a topic. 
 
 <b>Technologies:</b><br />
-Qt
+Qt, C++, QML
 
 <b>Screenshots/Mockup:</b><br />
 <b>Splash Screen:</b>
@@ -20,7 +20,9 @@ Qt
 ![Alt text](/img/Screenshots/settings_page.PNG)
 
 <b>Installation Instructions:</b><br />
-Would be great if I had an idea.
+1. Install Qt 5.5+ 
+2. Open project 
+3. Build And Run 
 
 <b>Contribution Guidelines:</b><br />
 Coming Soon!
@@ -34,7 +36,7 @@ N/A
 Saud Mohammed<br />
 
 <b>Inspiration:</b><br />
-Still searching.
+Coming Soon!
 
 <b>License:</b><br />
 N/A
