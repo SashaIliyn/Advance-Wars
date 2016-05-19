@@ -39,4 +39,4 @@ N/A
 Coming Soon!
 
 <b>License:</b><br />
-N/A
+GNU GENERAL PUBLIC LICENSE
