@@ -13,7 +13,15 @@ Qt, C++, QML
 <b>Screenshots/Mockup:</b><br />
 Splash Screen:
 
-![Alt text](/img/Screenshots/main_splash.PNG)
+![Alt text](/img/AdvancedLogoBG.PNG)
+
+New Game:
+
+![Alt text](/img/AdvancedLogoNewGame.PNG)
+
+Load Game:
+
+![Alt text](/img/AdvancedLogoLoadGame.PNG)
 
 Settings Page:
 
