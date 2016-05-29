@@ -1,194 +1,234 @@
-import QtQuick 2.6
-import QtQuick.Controls 1.5
-//import QtMultimedia 5.6
+import QtQuick 2.5
+import QtQuick.Controls 1.4
+import QtMultimedia 5.5
+import QtGraphicalEffects 1.0
 
-ApplicationWindow {
+ApplicationWindow
+{
+    id: root
     visible: true
     width: 640
     height: 480
     title: qsTr("Advance Wars")
     color: "transparent"
-    // main spalsh image
-    Image {
-        anchors.fill: parent
-        source: "img/background.png"
-        width: 640
-        height: 480
+
+
+
+    Audio
+    {
+        id: playMusic
+        source: "/songs/01-advance-wars-1-opening.mp3"
+        autoPlay: true
     }
-    // settings page
-    SettingsPage {
-        id: settingspage
+
+    SettingsPage
+    {
+        id: settingsPage
         visible: false
     }
-    // main mainsplash screen
-    Rectangle {
-        id: mainsplash
-        property alias mouseArea: mainmousearea
-        property real  maximumDragX: 0
-        property real  maximumDragY: 0
-        property alias drag: mouseArea1.drag
-        width: 400
-        height: 300
-        border.width: 2
-        radius: 10
-        visible: true
-        // main Advance Wars title
-        Rectangle {
-            id: maintitle
-            property alias text: maintitletextarea
-            width: 400
-            height: 60
-            border.width: 2
-            color: "transparent"
-            y: 60
-            Text{
-                id: maintitletextarea
-                anchors.centerIn: parent
-                text: "Advance Wars"
-                font.family: "Helvetica"
-                font.pointSize: 18
-                color: "black"
-            }
+
+    NewGamePage
+    {
+        id: newGamePage
+        visible: false
+    }
+
+    LoadGamePage
+    {
+        id: loadGamePage
+        visible: false
+    }
+
+    Item
+    {
+        id: homeRoot
+        width: 640
+        height: 480
+        FontLoader
+        {
+              id: cFontLoader
+              source: "/fonts/Minecrafter_3.ttf"
         }
-        // load game button
-        Rectangle {
-            id: loadgamerect
-            property alias mouseArea: mouseArea1
-            property alias text: loadgametextarea
-            width: 100
-            height: 50
-            border.width: 2
-            radius: 5
-            color: "transparent"
-            x: parent.width * 3 / 5
-            y: parent.height * 4 / 6
-            z: 10
-            Text {
-                id: loadgametextarea
-                anchors.centerIn: parent
-                text: "Load Game"
-                font.family: "Helvetica"
-                font.pointSize: 14
-                color: "black"
-                MouseArea {
-                    id: loadgamemousearea
-                    anchors.fill: parent
-                    onPressed: {
-                        mainsplash.visible = false
-                        settingspage.visible = false
-                        brd_board.visible = false
-                    }
-                    onClicked: {
-                        mainsplash.visible = false
-                        settingspage.visible = false
-                        brd_board.visible = false
-                    }
-                }
-            }
-            MouseArea {
-                id: mouseArea1
-                //anchors.fill: parent
-                //hoverEnabled: true
-                //onPressed: {mainsplash.visible = false
-                //settings.visible = true}
-                //onClicked: {mainsplash.visible = false}
-                //onEntered: {parent.color = "#CCE5FF"
-                //parent.opacity = .2}
-                //onExited: {parent.color = "transparent"
-                //parent.opacity = 1}
-            }
+
+        Image
+        {
+            id: mainBackground
+            anchors.fill: parent
+            source: "img/AdvancedLogoBG.png"
+            width: 640
+            height: 480
         }
+
+
         // new game button
-        Rectangle {
-            id: newgamerect
-            property alias mouseArea: mainmousearea
-            property alias text: newgametextarea
-            width: 100
-            height: 50
-            border.width: 2
-            radius: 5
-            color: "transparent"
-            x: parent.width / 5
-            y: parent.height * 4 / 6
-            z: 10
-            Text {
+            Text
+            {
                 id: newgametextarea
-                anchors.centerIn: parent
                 text: "New Game"
-                font.family: "Helvetica"
-                font.pointSize: 14
-                color: "black"
-                MouseArea {
-                    id: newgamemousearea
+                font.family: cFontLoader.name
+                font.pointSize: 12
+                color: "#0048ff"
+                anchors.centerIn: parent
+                anchors.bottom: loadgametextarea.top
+                anchors.verticalCenterOffset: -30
+                ColorAnimation on color { from: "#bdcdf8"; to:"#0048ff";  duration: 700; loops: Animation.Infinite}
+                MouseArea
+                {
                     anchors.fill: parent
-                    onPressed: {
-                        mainsplash.visible = false
-                        brd_board.visible = true
-                        settingspage.visible = false
-                    }
-                    onClicked: {
-                        mainsplash.visible = false
-                        brd_board.visible = true
-                        settingspage.visible = false
+                    onClicked:
+                    {
+                        homeRoot.visible = false
+                        newGamePage.visible = true
                     }
                 }
             }
-            MouseArea {
-                id: mainmousearea
+
+            DropShadow
+            {
+                id: newButtonShadow
+                anchors.fill: newgametextarea
+                horizontalOffset: 0
+                verticalOffset: 4
+                radius: 0
+                color: "#57c18d"
+                samples: 17
+                spread: 0.0
+                source: newgametextarea
             }
-        }
+
+        // load game button
+            Text
+            {
+                id: loadgametextarea
+                text: "Load Game"
+                font.family: cFontLoader.name
+                font.pointSize: 12
+                color: "#0048ff"
+                anchors.centerIn: parent
+                anchors.bottom: settingstextarea.top
+                anchors.verticalCenterOffset: 10
+                ColorAnimation on color { from: "#bdcdf8"; to:"#0048ff";  duration: 700; loops: Animation.Infinite}
+                MouseArea
+                {
+                    anchors.fill: parent
+                    onClicked:
+                    {
+                        homeRoot.visible = false
+                        loadGamePage.visible = true
+                    }
+                }
+            }
+
+            DropShadow
+            {
+                id: loadButtonShadow
+                anchors.fill: loadgametextarea
+                horizontalOffset: 0
+                verticalOffset: 4
+                radius: 0
+                color: "#57c18d"
+                samples: 17
+                spread: 0.0
+                source: loadgametextarea
+            }
+
         //settings button
-        Rectangle {
-            property alias mouseArea: mouseArea4
-            property alias text: settingstextarea
-            width: 100
-            height: 30
-            border.width: 2
-            radius: 5
-            color: "transparent"
-            x: parent.width * 2 / 5
-            y: parent.height * 7 / 8
-            z: 10
-            Text {
+            Text
+            {
                 id: settingstextarea
                 anchors.centerIn: parent
                 text: "Settings"
-                font.family: "Helvetica"
-                font.pointSize: 14
-                color: "black"
-                MouseArea {
-                    id: settingsmousearea
+                font.family: cFontLoader.name
+                font.pointSize: 12
+                color: "#0048ff"
+                anchors.verticalCenterOffset: 50
+                ColorAnimation on color { from: "#bdcdf8"; to:"#0048ff";  duration: 700; loops: Animation.Infinite}
+                MouseArea
+                {
                     anchors.fill: parent
-                    onPressed: {
-                        mainsplash.visible = false
-                        settingspage.visible = true
-                        gametitle.visible = false
-                        brd_board.visible = false
-                    }
-                    onClicked: {
-                        mainsplash.visible = false
-                        settingspage.visible = true
-                        gametitle.visible = false
-                        brd_board.visible = false
+                    onClicked:
+                    {
+                        homeRoot.visible = false
+                        settingsPage.visible = true
                     }
                 }
             }
-            MouseArea{
-                id:mouseArea4
+
+            DropShadow
+            {
+                id: settingsButtonShadow
+                anchors.fill: settingstextarea
+                horizontalOffset: 0
+                verticalOffset: 4
+                radius: 0
+                color: "#57c18d"
+                samples: 17
+                spread: 0.0
+                source: settingstextarea
             }
-        }
-        MouseArea{
-            id:mouseArea3
-            anchors.fill: parent
-            drag.target: parent
-            //onClicked:{splash.visible = false}
-            //drag.maximumX: maximumDragX
-            //drag.maximumY: maximumDragY
-        }
 
 
     }
 
 
-    //end of first mainsplash screen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    HomeScreen
+//    {
+//        id: showHome
+//        anchors.fill: parent
+//        visible: true
+
+////        onStartNewGame:
+////        {
+
+////        }
+
+////        onStartLoadGame:
+////        {
+
+////        }
+
+//        onStartSettings:
+//        {
+//            SettingsPage.visible = true
+//            HomeScreen.visible = false
+
+//        }
+//    }
+
+////    SettingsPage
+////    {
+
+////    }
 }

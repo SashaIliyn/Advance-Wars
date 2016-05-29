@@ -1,9 +1,13 @@
 import QtQuick 2.0
-import QtQuick.Controls 1.5
-import QtMultimedia 5.6
+import QtQuick.Controls 1.4
+import QtQuick.Controls.Styles 1.1
+import QtMultimedia 5.5
+import QtGraphicalEffects 1.0
+import QtQuick.Layouts 1.0
 
 // settings page
-Rectangle {
+Rectangle
+{
     id: settingsrect
     anchors.fill: parent
     border.width: 2
@@ -18,175 +22,223 @@ Rectangle {
 
     property int number_of_songs: 1
 
-    // Advance Wars title
-    Rectangle {
-        id: settingstitlerect
-        width: parent.width
-        height: 60
-        border.width: 2
-        color: "transparent"
-        y: 60
-        Text {
-            id: titletextarea
-            anchors.centerIn: parent
-            text: "Advance Wars"
-            font.family: "Helvetica"
-            font.pointSize: 18
-            color: "black"
+    //    HomeScreen
+    //    {
+    //        id: homeScreen
+    //        visible: false
+    //    }
+
+    Item
+    {
+        id: settingsRoot
+        width: 640
+        height: 480
+        FontLoader
+        {
+            id: cFontLoader
+            source: "/fonts/Minecrafter_3.ttf"
         }
-    }
-    // return button
-    Rectangle {
-        id: settingsreturnrect
-        width: 100
-        height: 50
-        border.width: 2
-        radius: 5
-        color: "transparent"
-        x: parent.width * 3 / 5
-        y: parent.height * 4 / 6
-        z: 10
-        Text {
-            id: returntextarea
-            anchors.centerIn: parent
-            text: "Return"
-            font.family: "Helvetica"
-            font.pointSize: 14
-            color: "black"
+
+        Image
+        {
+            id: settingsBackground
+            anchors.fill: parent
+            source: "img/AdvancedLogoSettings.png"
+            width: 640
+            height: 480
         }
-    }
-    // save button
-    Rectangle {
-        id: settingssaverect
-        width: 100
-        height: 50
-        border.width: 2
-        radius: 5
-        color: "transparent"
-        x: parent.width / 5
-        y: parent.height * 4 / 6
-        Text {
-            id:savetextarea
+
+        Text
+        {
+            id: backFromSettings
+            anchors.centerIn: parent
+            text: "Back"
+            font.family: cFontLoader.name
+            font.pointSize: 12
+            color: "#3c7631"
+            anchors.verticalCenterOffset: 100
+            anchors.horizontalCenterOffset: 60
+            ColorAnimation on color { from: "#a5d09d"; to:"#3c7631";  duration: 700; loops: Animation.Infinite}
+            MouseArea
+            {
+                anchors.fill: parent
+                onClicked:
+                {
+                    homeRoot.visible = true
+                    settingsPage.visible = false
+                }
+            }
+
+        }
+        DropShadow
+        {
+            id: backFromSettingsShadow
+            anchors.fill: backFromSettings
+            horizontalOffset: 0
+            verticalOffset: 2
+            radius: 0
+            color: "#57c18d"
+            samples: 17
+            spread: 0.0
+            source: backFromSettings
+        }
+
+        Text
+        {
+            id: saveSettings
             anchors.centerIn: parent
             text: "Save"
-            font.family: "Helvetica"
-            font.pointSize: 14
-            color: "black"
-        }
-    }
-    // number of cells
-    Rectangle {
-        id: settingscellsrect
-        x: 188
-        y: 189
-        width: 66
-        height: 22
-        border.width: 1
-        TextInput {
-            id: cellstextinput
-            anchors.fill: parent
-            text: qsTr("# of cells")
-            horizontalAlignment: Text.AlignHCenter
-            selectionColor: "#008068"
-            font.pixelSize: 12
-            MouseArea {
-                id: cellsmousearea
+            font.family: cFontLoader.name
+            font.pointSize: 12
+            color: "#3c7631"
+            anchors.verticalCenterOffset: 100
+            anchors.horizontalCenterOffset: -60
+            ColorAnimation on color { from: "#a5d09d"; to:"#3c7631";  duration: 700; loops: Animation.Infinite}
+            MouseArea
+            {
                 anchors.fill: parent
-                onClicked:{
-                    parent.text = ""
-                }
-                Keys.onReturnPressed:{
-                    //Cursed_8_ball.set_draggable(true);
-                    //Cursed_8_ball.set_question(txtin_input.text);
+                onClicked:
+                {
+                    homeRoot.visible = true
+                    settingsPage.visible = false
                 }
             }
+
         }
-    }
-    // text for board size
-    Text {
-        id: boardsizetext
-        x: 110
-        y: 189
-        width: 78
-        height: 22
-        text: qsTr("Board Size:")
-        font.pixelSize: 12
-    }
-    // text for sound checkbox
-    Text {
-        id: soundtext
-        x: 110
-        y: 217
-        width: 108
-        height: 22
-        text: qsTr("Turn Sound On/Off")
-        font.pixelSize: 12
-    }
-    // checkbox for sound
-    CheckBox {
-        id: soundcheckbox
-        x: 224
-        y: 217
-        width: 19
-        height: 19
-        checked: false
-        MouseArea {
-            id: soungmousearea
-            anchors.fill: parent
-            onClicked: {
-                // play song
-                if (soundcheckbox.checked === true) {
-                    soundcheckbox.checked = false
-                    is_playing = false
-                    songplaying.pause()
-                }
-                // pause song
-                else {
-                    soundcheckbox.checked = true
-                    is_playing = true
-                    songplaying.play()
-                }
-                console.log("Play button clicked!")
-            }
+        DropShadow
+        {
+            id: saveSettingsShadow
+            anchors.fill: saveSettings
+            horizontalOffset: 0
+            verticalOffset: 2
+            radius: 0
+            color: "#57c18d"
+            samples: 17
+            spread: 0.0
+            source: saveSettings
         }
-    }
-    // number of players
-    Rectangle {
-        id: settingsplayersrect
-        x: 188
-        y: 161
-        width: 66
-        height: 22
-        border.width: 1
-        TextInput {
-            id: playerstextinput
-            anchors.fill: parent
-            text: qsTr("#")
-            horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 12
-            MouseArea {
+
+        //START HERE ///////////////////////////////////////////////////////////
+
+        Text
+        {
+            id: textToggle
+            text: "Music"
+            font.family: cFontLoader.name
+            font.pointSize: 9
+            anchors.verticalCenter: settingsRoot.verticalCenter
+            anchors.verticalCenterOffset: 6
+            anchors.horizontalCenter: settingsRoot.horizontalCenter
+            anchors.horizontalCenterOffset: -75
+            //anchors.right: musicToggle.left
+            anchors.rightMargin: -5
+            color: "#3c7631"
+            //ColorAnimation on color { from: "#a5d09d"; to:"#3c7631";  duration: 700; loops: Animation.Infinite}
+        }
+        DropShadow
+        {
+            id: musicToggleShadow
+            anchors.fill: textToggle
+            horizontalOffset: 0
+            verticalOffset: 2
+            radius: 0
+            color: "#57c18d"
+            samples: 17
+            spread: 0.0
+            source: textToggle
+        }
+
+        CheckBox
+        {
+            id: soundcheckbox
+            anchors.verticalCenter: settingsRoot.verticalCenter
+            anchors.verticalCenterOffset: 11
+            anchors.horizontalCenter: settingsRoot.horizontalCenter
+            anchors.horizontalCenterOffset: 15
+            z:+2
+            width: 50
+            height: 50
+            checked: false
+            MouseArea
+            {
+                id: soungmousearea
                 anchors.fill: parent
-                onClicked: {
-                    parent.text = ""
-                }
-                Keys.onReturnPressed: {
-                    //Cursed_8_ball.set_draggable(true);
-                    //Cursed_8_ball.set_question(txtin_input.text);
+                onClicked:
+                {
+                    // play song
+                    if (soundcheckbox.checked === true)
+                    {
+                        soundcheckbox.checked = false
+                        is_playing = false
+                        songplaying.pause()
+                    }
+                    // pause song
+                    else
+                    {
+                        soundcheckbox.checked = true
+                        is_playing = true
+                        songplaying.play()
+                    }
+                    console.log("Play button clicked!")
                 }
             }
         }
-    }
-    // text for number of players
-    Text {
-        id: plyaerstext
-        x: 110
-        y: 161
-        width: 78
-        height: 22
-        text: qsTr("Player Count:")
-    }
-    Audio {
-        id: songplaying
-        source: sources[0]
+
+        Text
+        {
+            id: settings2
+            text: "STNG 2"
+            font.family: cFontLoader.name
+            font.pointSize: 9
+            anchors.verticalCenter: settingsRoot.verticalCenter
+            anchors.verticalCenterOffset: -40
+            anchors.horizontalCenter: settingsRoot.horizontalCenter
+            anchors.horizontalCenterOffset: -75
+            anchors.bottom: textToggle.top
+            anchors.topMargin: -5
+            color: "#3c7631"
+            //ColorAnimation on color { from: "#a5d09d"; to:"#3c7631";  duration: 700; loops: Animation.Infinite}
+        }
+        DropShadow
+        {
+            id: settings2shadow
+            anchors.fill: settings2
+            horizontalOffset: 0
+            verticalOffset: 2
+            radius: 0
+            color: "#57c18d"
+            samples: 17
+            spread: 0.0
+            source: settings2
+        }
+
+
+        Text
+        {
+            id: settings1
+            text: "STNG 1"
+            font.family: cFontLoader.name
+            font.pointSize: 9
+            anchors.verticalCenter: settingsRoot.verticalCenter
+            anchors.verticalCenterOffset: -70
+            anchors.horizontalCenter: settingsRoot.horizontalCenter
+            anchors.horizontalCenterOffset: -75
+            anchors.bottom: textToggle.top
+            anchors.topMargin: -5
+            color: "#3c7631"
+            //ColorAnimation on color { from: "#a5d09d"; to:"#3c7631";  duration: 700; loops: Animation.Infinite}
+        }
+        DropShadow
+        {
+            id: settings1shadow
+            anchors.fill: settings1
+            horizontalOffset: 0
+            verticalOffset: 2
+            radius: 0
+            color: "#57c18d"
+            samples: 17
+            spread: 0.0
+            source: settings1
+        }
     }
 }

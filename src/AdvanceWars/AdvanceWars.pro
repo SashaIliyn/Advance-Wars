@@ -23,3 +23,5 @@ HEADERS += \
     cell.h \
     grid.h \
     unit.h
+
+DISTFILES +=
