@@ -2,7 +2,7 @@ import QtQuick 2.5
 import QtQuick.Controls 1.4
 import QtMultimedia 5.5
 import QtGraphicalEffects 1.0
-
+import QtQuick.Window 2.2
 ApplicationWindow
 {
     id: root
@@ -12,13 +12,26 @@ ApplicationWindow
     title: qsTr("Advance Wars")
     color: "transparent"
 
-
+    Board{
+        id: board
+        visible: false
+    }
 
     Audio
     {
         id: playMusic
         source: "/songs/01-advance-wars-1-opening.mp3"
-        autoPlay: true
+        //autoPlay: false
+
+       Component.onCompleted: {
+           console.log(herp.state())
+           if(herp.state())
+            playMusic.play()
+           else
+               playMusic.pause()
+           //playMusic.
+
+       }
     }
 
     SettingsPage
@@ -31,6 +44,7 @@ ApplicationWindow
     {
         id: newGamePage
         visible: false
+
     }
 
     LoadGamePage
