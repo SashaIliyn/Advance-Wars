@@ -83,40 +83,40 @@ Rectangle
             source: backFromSettings
         }
 
-        Text
-        {
-            id: saveSettings
-            anchors.centerIn: parent
-            text: "Save"
-            font.family: cFontLoader.name
-            font.pointSize: 12
-            color: "#3c7631"
-            anchors.verticalCenterOffset: 100
-            anchors.horizontalCenterOffset: -60
-            ColorAnimation on color { from: "#a5d09d"; to:"#3c7631";  duration: 700; loops: Animation.Infinite}
-            MouseArea
-            {
-                anchors.fill: parent
-                onClicked:
-                {
-                    homeRoot.visible = true
-                    settingsPage.visible = false
-                }
-            }
+//        Text
+//        {
+//            id: saveSettings
+//            anchors.centerIn: parent
+//            text: "Save"
+//            font.family: cFontLoader.name
+//            font.pointSize: 12
+//            color: "#3c7631"
+//            anchors.verticalCenterOffset: 100
+//            anchors.horizontalCenterOffset: -60
+//            ColorAnimation on color { from: "#a5d09d"; to:"#3c7631";  duration: 700; loops: Animation.Infinite}
+//            MouseArea
+//            {
+//                anchors.fill: parent
+//                onClicked:
+//                {
+//                    homeRoot.visible = true
+//                    settingsPage.visible = false
+//                }
+//            }
 
-        }
-        DropShadow
-        {
-            id: saveSettingsShadow
-            anchors.fill: saveSettings
-            horizontalOffset: 0
-            verticalOffset: 2
-            radius: 0
-            color: "#57c18d"
-            samples: 17
-            spread: 0.0
-            source: saveSettings
-        }
+//        }
+//        DropShadow
+//        {
+//            id: saveSettingsShadow
+//            anchors.fill: saveSettings
+//            horizontalOffset: 0
+//            verticalOffset: 2
+//            radius: 0
+//            color: "#57c18d"
+//            samples: 17
+//            spread: 0.0
+//            source: saveSettings
+//        }
 
         //START HERE ///////////////////////////////////////////////////////////
 
@@ -188,62 +188,62 @@ Rectangle
             }
         }
 
-        Text
-        {
-            id: settings2
-            text: "STNG 2"
-            font.family: cFontLoader.name
-            font.pointSize: 9
-            anchors.verticalCenter: settingsRoot.verticalCenter
-            anchors.verticalCenterOffset: -40
-            anchors.horizontalCenter: settingsRoot.horizontalCenter
-            anchors.horizontalCenterOffset: -75
-            anchors.bottom: textToggle.top
-            anchors.topMargin: -5
-            color: "#3c7631"
-            //ColorAnimation on color { from: "#a5d09d"; to:"#3c7631";  duration: 700; loops: Animation.Infinite}
-        }
-        DropShadow
-        {
-            id: settings2shadow
-            anchors.fill: settings2
-            horizontalOffset: 0
-            verticalOffset: 2
-            radius: 0
-            color: "#57c18d"
-            samples: 17
-            spread: 0.0
-            source: settings2
-        }
+//        Text
+//        {
+//            id: settings2
+//            text: "STNG 2"
+//            font.family: cFontLoader.name
+//            font.pointSize: 9
+//            anchors.verticalCenter: settingsRoot.verticalCenter
+//            anchors.verticalCenterOffset: -40
+//            anchors.horizontalCenter: settingsRoot.horizontalCenter
+//            anchors.horizontalCenterOffset: -75
+//            anchors.bottom: textToggle.top
+//            anchors.topMargin: -5
+//            color: "#3c7631"
+//            //ColorAnimation on color { from: "#a5d09d"; to:"#3c7631";  duration: 700; loops: Animation.Infinite}
+//        }
+//        DropShadow
+//        {
+//            id: settings2shadow
+//            anchors.fill: settings2
+//            horizontalOffset: 0
+//            verticalOffset: 2
+//            radius: 0
+//            color: "#57c18d"
+//            samples: 17
+//            spread: 0.0
+//            source: settings2
+//        }
 
 
-        Text
-        {
-            id: settings1
-            text: "STNG 1"
-            font.family: cFontLoader.name
-            font.pointSize: 9
-            anchors.verticalCenter: settingsRoot.verticalCenter
-            anchors.verticalCenterOffset: -70
-            anchors.horizontalCenter: settingsRoot.horizontalCenter
-            anchors.horizontalCenterOffset: -75
-            anchors.bottom: textToggle.top
-            anchors.topMargin: -5
-            color: "#3c7631"
-            //ColorAnimation on color { from: "#a5d09d"; to:"#3c7631";  duration: 700; loops: Animation.Infinite}
-        }
-        DropShadow
-        {
-            id: settings1shadow
-            anchors.fill: settings1
-            horizontalOffset: 0
-            verticalOffset: 2
-            radius: 0
-            color: "#57c18d"
-            samples: 17
-            spread: 0.0
-            source: settings1
-        }
+//        Text
+//        {
+//            id: settings1
+//            text: "STNG 1"
+//            font.family: cFontLoader.name
+//            font.pointSize: 9
+//            anchors.verticalCenter: settingsRoot.verticalCenter
+//            anchors.verticalCenterOffset: -70
+//            anchors.horizontalCenter: settingsRoot.horizontalCenter
+//            anchors.horizontalCenterOffset: -75
+//            anchors.bottom: textToggle.top
+//            anchors.topMargin: -5
+//            color: "#3c7631"
+//            //ColorAnimation on color { from: "#a5d09d"; to:"#3c7631";  duration: 700; loops: Animation.Infinite}
+//        }
+//        DropShadow
+//        {
+//            id: settings1shadow
+//            anchors.fill: settings1
+//            horizontalOffset: 0
+//            verticalOffset: 2
+//            radius: 0
+//            color: "#57c18d"
+//            samples: 17
+//            spread: 0.0
+//            source: settings1
+//        }
     }
 
 }

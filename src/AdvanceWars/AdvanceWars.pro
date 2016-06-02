@@ -22,6 +22,7 @@ HEADERS += \
     building.h \
     cell.h \
     grid.h \
-    unit.h
+    unit.h \
+    settings.h
 
 DISTFILES +=

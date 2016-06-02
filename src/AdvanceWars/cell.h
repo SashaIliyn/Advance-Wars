@@ -5,7 +5,6 @@
 #include <QImage>
 #include <QObject>
 #include <QDebug>
-
 //global Color
 //global border color
 
