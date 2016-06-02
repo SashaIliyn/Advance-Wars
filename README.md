@@ -17,7 +17,7 @@ Splash Screen:
 
 New Game:
 
-![Alt text](/img/AdvancedLogoNewGame.png)
+![Alt text](/img/Screenshots/NewGameScreen.PNG)
 
 Load Game:
 
@@ -25,7 +25,11 @@ Load Game:
 
 Settings Page:
 
-![Alt text](/img/AdvancedLogoSettings.png)
+![Alt text](/img/Screenshots/SettingsScreen.PNG)
+
+Gameplay:
+
+![Alt text](/img/Screenshots/GamePlayScreen1.PNG)
   
 <b>Installation Instructions:</b><br />
 1. Install Qt 5.5+<br />
@@ -41,9 +45,9 @@ N/A
   
 <b>Contributors:</b><br />
 [Albert Sta Cruz](https://github.com/aStaCruz)<br />
-[Sasha Iliyn](https://github.com/SashaIliyn)<br />
 [Saud Mohammed](https://github.com/SaudMoh)<br />
-  
+[Sasha Iliyn](https://github.com/SashaIliyn)<br />  
+
 <b>Inspiration:</b><br />
 Coming Soon!
   
