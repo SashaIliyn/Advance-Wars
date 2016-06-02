@@ -1,36 +1,20 @@
-# ADVANCE WARS - GUI Project 
+# GUI-Project
 
 <b>Project Logo:</b>
 
-![Alt text](/img/Logo/Cloud.png)
+![Alt text](/img/Logo/Logo.png)
 
 <b>Description:</b><br />
 This will be my GUI project for which I have yet to decided on a topic. 
 
 <b>Technologies:</b><br />
-Qt, C++, QML
+Qt
 
 <b>Screenshots/Mockup:</b><br />
-Splash Screen:
-
-![Alt text](/img/AdvancedLogoBG.PNG)
-
-New Game:
-
-![Alt text](/img/AdvancedLogoNewGame.PNG)
-
-Load Game:
-
-![Alt text](/img/AdvancedLogoLoadGame.PNG)
-
-Settings Page:
-
-![Alt text](/img/Screenshots/settings_page.PNG)
+Coming soon!
 
 <b>Installation Instructions:</b><br />
-1. Install Qt 5.5+<br />
-2. Open project<br />
-3. Build And Run<br />
+Would be great if I had an idea.
 
 <b>Contribution Guidelines:</b><br />
 Coming Soon!
@@ -39,12 +23,11 @@ Coming Soon!
 N/A
 
 <b>Contributors:</b><br />
-[Albert Sta Cruz](https://github.com/aStaCruz)<br />
 [Sasha Iliyn](https://github.com/SashaIliyn)<br />
-[Saud Mohammed](https://github.com/SaudMoh)<br />
+[Albert Sta Cruz](https://github.com/aStaCruz)<br />
 
 <b>Inspiration:</b><br />
-Coming Soon!
+Still searching.
 
 <b>License:</b><br />
-GNU GENERAL PUBLIC LICENSE
+Psh!
