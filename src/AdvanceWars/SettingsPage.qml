@@ -158,7 +158,7 @@ Rectangle
             z:+2
             width: 50
             height: 50
-            checked: false
+            checked: herp.state()
             MouseArea
             {
                 id: soungmousearea
@@ -170,16 +170,20 @@ Rectangle
                     {
                         soundcheckbox.checked = false
                         is_playing = false
-                        songplaying.pause()
+                        herp.setOff()
+                        playMusic.pause()
+                        console.log(herp.state())
                     }
                     // pause song
                     else
                     {
                         soundcheckbox.checked = true
                         is_playing = true
-                        songplaying.play()
+                        herp.setOn()
+                        playMusic.play()
+                        console.log(herp.state())
                     }
-                    console.log("Play button clicked!")
+
                 }
             }
         }
@@ -241,4 +245,5 @@ Rectangle
             source: settings1
         }
     }
+
 }
